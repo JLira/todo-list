@@ -1,4 +1,5 @@
 from rest_framework import viewsets
+
 from rest_framework.decorators import action
 from rest_framework.response import Response
 
@@ -7,6 +8,8 @@ from items.api.serializers import ItemsSerializer
 from items.api.serializers import ItemsDetailsSerializer
 
 class ItemsViewSet(viewsets.ModelViewSet):
+    # permission_classes = (IsAuthenticated,)
+
     queryset = Items.objects.all().order_by('title')
     serializer_class = ItemsSerializer
 

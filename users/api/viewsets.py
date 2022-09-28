@@ -1,4 +1,5 @@
 from rest_framework import viewsets
+
 from rest_framework.decorators import action
 from rest_framework.response import Response
 
@@ -8,6 +9,8 @@ from users.api.serializers import UserDetailsSerializer
 
 
 class UsersViewSet(viewsets.ModelViewSet):
+    # permission_classes = (IsAuthenticated,)
+
     queryset = Users.objects.all()
     serializer_class = UsersSerializer
     

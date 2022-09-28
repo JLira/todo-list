@@ -1,6 +1,6 @@
 from rest_framework import serializers
-from items.api.serializers import ItemsSerializer
 from lists.models import Lists
+from items.api.serializers import ItemsSerializer
 
 
 class ListsSerializer(serializers.ModelSerializer):
@@ -14,4 +14,8 @@ class ListsDetailSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Lists
-        fields = ['id_list', 'title']
+        fields = [
+            'id_list', 
+            'title', 
+            'items'
+        ]

@@ -9,4 +9,7 @@ class Items(models.Model):
     id_list = models.ForeignKey(
         Lists, related_name='items', on_delete=models.CASCADE, blank=False, null=False
     )
-    
+
+    class Meta:
+        managed = True
+        db_table = 'items'

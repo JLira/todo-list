@@ -13,12 +13,14 @@ Teste de Back-end ToDo List
 
 ```console
 git clone git@github.com:JLira/todo-list.git
-cd test-vibra
+cd todo-list
 python -m venv .venv
 source .wttd/bin/activate
 pip install -r requirements.txt
-cp contrib/env-sample .env
+docker-compose up -d
+python manage.py migrate
 python manage.py test
+python manage.py runserver
 ```
 ## Como fazer o deploy local?
 
